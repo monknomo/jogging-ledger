@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<!-- /ht Paul Irish - http://front.ie/j5OMXi -->
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>C25K Checklist</title>
+	<meta name="Description" content="Simple checklist for C25K">
+	<meta name="author" content="Gunnar Gissel <ggissel@alumni.cmu.edu>">
+
+	<!-- /ht Andy Clarke - http://front.ie/lkCwyf -->
+	<meta http-equiv="cleartype" content="on">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  
+	<link rel="shortcut icon" href="/link/to/favicon.ico">
+	<link rel="apple-touch-icon" href="/link/to/apple-touch-icon.png">
+
+	<!-- /ht Jeremy Keith - http://front.ie/mLXiaS -->
+	<link rel="stylesheet" href="css/global.css" media="all">
+	<link rel="stylesheet" href="css/layout.css" media="all and (min-width: 33.236em)">
+	<link type="text/css" id="" rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/start/jquery-ui.min.css" media="screen"></link>
+	<!-- 30em + (1.618em * 2) = 33.236em / Eliminates potential of horizontal scrolling in most cases -->
+
+	<!--[if (lt IE 9) & (!IEMobile)]>
+	<link rel="stylesheet" href="c25k/css/layout.css" media="all">
+	<![endif]-->
+
+	<script src="js/libs/modernizr.custom.19646.js"></script>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    
+    <script type="text/javascript">
+        //<![CDATA[
+        function updateColumnHeight(){
+            var tallestColumn = 0;
+            $(".column").each(function(index){
+                                    currentHeight = $(this).height();
+                                    if(currentHeight > tallestColumn){
+                                        tallestColumn = currentHeight;
+                                    }
+                                });
+            $(".column").height(tallestColumn);
+        }
+        function load(){
+            $("input.checkbox").button().click(function(event){
+                                                    $(".checkbox").each(function(index){
+                                                        window.localStorage.setItem($(this).attr("id"), $(this).prop("checked"));   
+                                                    });                                                    
+                                                });
+            $(".checkbox").each(function(index){
+                                        $(this).prop( "checked", window.localStorage.getItem( $(this).attr("id") ) === 'true' ? true:false );
+                                        $(this).button("refresh");
+                                    });
+            updateColumnHeight();
+            $(window).resize(function(){
+                                updateColumnHeight();
+                            });
+        }
+        //]]>
+    </script>
+
+</head>
+
+<body onload="load()">
+  
+  <div id="container" class="cf">
+    
+    <header>
+        <h1>Simple C25K Tracker</h1>
+    </header>   	
+    
+	<form>
+        <div id="table">
+		<div class="week">
+				<h2><b>Week 1</h2></b>
+		</div>
+		<div class="row">                
+			<div class="d1 column">
+				<input type="checkbox" class="checkbox" id="w1d1" value="w1d1"/> 
+				<label for="w1d1">W1D3</label></label>
+				<br/>
+				<p>5 min warmup walk.  Jog 60 seconds and walk 90 seconds for 20 minutes total.</p>
+			</div>
+			<div class="d2 column">
+				<input type="checkbox" class="checkbox" id="w1d2"value="w1d2" /> 
+				<label for="w1d2">W1D2</label>
+				<br/>
+				<p>5 min warmup walk.  Jog 60 seconds and walk 90 seconds for 20 minutes total.</p>
+			</div>
+			<div class="d3 column">
+				<input type="checkbox" class="checkbox" id="w1d3" value="w1d3" /> 
+				<label for="w1d3">W1D3</label>
+				<br/>
+				<p>5 min warmup walk.  Jog 60 seconds and walk 90 seconds for 20 minutes total.</p>
+			</div>
+		</div>
+		
+		<div class="week">
+				<h2><b>Week 2</h2></b>
+		</div>
+		<div class="row">                
+			<div class="d1 column">
+				<input type="checkbox" class="checkbox" id="w2d1" value="w2d1" /> 
+				<label for="w2d1">W2D1</label>
+				<br/>
+				<p>5 min warmup walk.  Jog 90 seconds and walk two minutes for 20 minutes total.</p>
+			</div>
+			<div class="d2 column">
+				<input type="checkbox" class="checkbox" id="w2d2" value="w2d2" /> 
+				<label for="w2d2">W2D2</label>
+				<br/>
+				<p>5 min warmup walk.  Jog 90 seconds and walk two minutes for 20 minutes total.</p>
+			</div>
+			<div class="d3 column">
+				<input type="checkbox" class="checkbox" id="w2d3" value="w2d3" /> 
+				<label for="w2d3">W2D3</label>
+				<br/>
+				<p>5 min warmup walk.  Jog 90 seconds and walk two minutes for 20 minutes total.</p>
+			</div>
+		</div>
+		
+		<div class="week">
+				<h2><b>Week 3</h2></b>
+		</div>            
+		<div class="row">
+			
+			<div class="d1 column">
+				<input type="checkbox" class="checkbox" id="w3d1" value="w3d1" /> 
+				<label for="w3d1">W3D1</label>
+				<br/>
+				<p>5 min warmup walk. Jog 90 seconds, walk 90 seconds, jog three minutes, walk three minutes</p>
+			</div>
+			<div class="d2 column">
+				<input type="checkbox" class="checkbox" id="w3d2" value="w3d2" /> 
+				<label for="w3d2">W3D2</label>
+				<br/>
+				<p>5 min warmup walk. Jog 90 seconds, walk 90 seconds, jog three minutes, walk three minutes</p>
+			</div>
+			<div class="d3 column">
+				<input type="checkbox" class="checkbox" id="w3d3" value="w3d3" /> 
+				<label for="w3d3">W3D3</label><br/>
+				<p>5 min warmup walk. Jog 90 seconds, walk 90 seconds, jog three minutes, walk three minutes</p>
+			</div>
+		</div>
+		
+		<div class="week">
+				<h2><b>Week 4</h2></b>
+		</div>
+		<div class="row">
+			
+			<div class="d1 column">
+				<input type="checkbox" class="checkbox" id="w4d1" value="w4d1" /> 
+				<label for="w4d1">W4D1</label><br/>
+				<p>5 min warmup walk. Jog 1 lap, walk half a lap.  Jog two laps, walk one lap.  Jog one lap, walk half a lap. Jog two laps.</p>
+			</div>
+			<div class="d2 column">
+				<input type="checkbox" class="checkbox" id="w4d2" value="w4d2" /> 
+				<label for="w4d2">W4D2</label>
+				<br/>
+				<p>5 min warmup walk. Jog 1 lap, walk half a lap.  Jog two laps, walk one lap.  Jog one lap, walk half a lap. Jog two laps.</p>
+			</div>
+			<div class="d3 column">
+				<input type="checkbox" class="checkbox" id="w4d3" value="w4d3" /> 
+				<label for="w4d3">W4D3</label>
+				<br/>
+				<p>5 min warmup walk. Jog 1 lap, walk half a lap.  Jog two laps, walk one lap.  Jog one lap, walk half a lap. Jog two laps.</p>
+			</div>
+		</div>
+		
+		<div class="week">
+				<h2><b>Week 5</h2></b>
+		</div>
+		<div class="row">                
+			<div class="d1 column">
+			   <input type="checkbox" class="checkbox" id="w5d1" value="w5d1" /> 
+			   <label for="w5d1">W5D1</label>
+			   <br/>
+				<p>5 min warmup walk.  Jog two laps, walk a lap.  Jog two laps, walk a lap.  Jog two laps</p>
+			</div>
+			<div class="d2 column">
+				<input type="checkbox" class="checkbox" id="w5d2" value="w5d2" /> 
+				<label for="w5d2">W5D2</label>
+				<br/>
+				<p>5 min warmup walk.  Jog three laps, walk two laps, jog three laps.</p>
+			</div>
+			<div class="d3 column">
+				<input type="checkbox" class="checkbox" id="w5d3" value="w5d3" /> 
+				<label for="w5d3">W5D3</label>
+				<br/>
+				<p>5 min warmup walk.  Jog 8 laps.</p>
+			</div>
+		</div>
+		
+		<div class="week">
+				<h2><b>Week 6</h2></b>
+		</div>
+		<div class="row">                
+			<div class="d1 column">
+				<input type="checkbox" class="checkbox" id="w6d1" value="w6d1" /> 
+				<label for="w6d1">W6D1</label>
+				<br/>
+				<p>5 min warmup walk.  Jog 2 laps, walk 1 lap.  Jog 3 laps, walk 1 lap.  Jog 2 laps.</p>
+			</div>
+			<div class="d2 column">
+				<input type="checkbox" class="checkbox" id="w6d2" value="w6d2" /> 
+				<label for="w6d2">W6D2</label>
+				<br/>
+				<p>5 min warmup walk.  Jog 1 lap, walk 1 lap, jog 1 lap.</p>
+			</div>
+			<div class="d3 column">
+				<input type="checkbox" class="checkbox" id="w6d3" value="w6d3" /> 
+				<label for="w6d3">W6D3</label>
+				<br/>
+				<p>5 min warmup walk. Jog 9 laps</p>
+			</div>
+		</div>
+		
+		<div class="week">
+				<h2><b>Week 7</h2></b>
+		</div>
+		<div class="row">                
+			<div class="d1 column">
+				<input type="checkbox" class="checkbox" id="w7d1" value="w7d1" /> 
+				<label for="w7d1">W7D1</label>
+				<br/>
+				<p>5 min warmup walk. Jog 10 laps</p>
+			</div>
+			<div class="d2 column">
+				<input type="checkbox" class="checkbox" id="w7d2" value="w7d2" /> 
+				<label for="w7d2">W7D2</label>
+				<br/>
+				<p>5 min warmup walk. Jog 10 laps</p>
+			</div>
+			<div class="d3 column">
+				<input type="checkbox" class="checkbox" id="w7d3" value="w7d3" /> 
+				<label for="w7d3">W7D3</label>
+				<br/>
+				<p>5 min warmup walk. Jog 10 laps</p>
+			</div>
+		</div>
+		
+		<div class="week">
+				<h2><b>Week 8</h2></b>
+		</div>
+		<div class="row">                
+			<div class="d1 column">
+				<input type="checkbox" class="checkbox" id="w8d1" value="w8d1" /> 
+				<label for="w8d1">W8D1</label>
+				<br/>
+				<p>5 min warmup walk.  Jog 11 laps</p>
+			</div>
+			<div class="d2 column">
+				<input type="checkbox" class="checkbox" id="w8d2" value="w8d2" /> 
+				<label for="w8d2">W8D2</label>
+				<br/>
+				<p>5 min warmup walk.  Jog 11 laps</p>
+			</div>
+			<div class="d3 column">
+				<input type="checkbox" class="checkbox" id="w8d3" value="w8d3" /> 
+				<label for="w8d3">W8D3</label><br/>
+				<p>5 min warmup walk.  Jog 11 laps</p>
+			</div>
+		</div>
+		
+		
+		<div class="week">
+				<h2><b>Week 9</h2></b>
+		</div>
+		<div class="row">                
+			<div class="d1 column">
+				<input type="checkbox" class="checkbox" id="w9d1" value="w9d1" /> 
+				<label for="w9d1">W9D1</label>
+				<br/>
+				<p>5 min warmup walk.  Jog 12 laps</p>
+			</div>
+			<div class="d2 column">
+				<input type="checkbox" class="checkbox" id="w9d2" value="w9d2" /> 
+				<label for="w9d2">W9D2</label>
+				<br/>
+				<p>5 min warmup walk.  Jog 12 laps</p>
+			</div>
+			<div class="d3 column">
+				<input type="checkbox" class="checkbox" id="w9d3" value="w9d3" /> 
+				<label for="w9d3">W9D3</label>
+				<br/>
+				<p>5 min warmup walk.  Jog 12 laps</p>
+			</div>
+		</div>
+        </div>
+	</form>
+	
+    <footer></footer>
+    
+  </div>
+
+</body>
+
+</html>
